@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Book</title>
+</head>
+<body>
+
+<h1>Add Book</h1>
+
+<form method="POST">
+
+    <label>Book ID:</label>
+    <input type="text" name="book_id" required>
+    <br><br>
+
+    <label>Book Name:</label>
+    <input type="text" name="book_name" required>
+    <br><br>
+
+    <label>Author:</label>
+    <input type="text" name="author" required>
+    <br><br>
+
+    <button type="submit">Add Book</button>
+
+</form>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+<br>
+
+<a href="/home">Back to Home</a>
+
+</body>
+</html>

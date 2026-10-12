@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fine Records</title>
+</head>
+
+<body>
+
+<h1>Fine Records</h1>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+
+<form method="POST" action="/clear_fines">
+    <button type="submit">Clear All Fine Records</button>
+</form>
+
+<br>
+
+{% if fine_records %}
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Student Name</th>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Late Days</th>
+        <th>Fine</th>
+    </tr>
+
+    {% for record in fine_records %}
+
+    <tr>
+        <td>{{ record[0] }}</td>
+        <td>{{ record[1] }}</td>
+        <td>{{ record[2] }}</td>
+        <td>{{ record[3] }}</td>
+        <td>₹{{ record[4] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<p>No fine records available.</p>
+
+{% endif %}
+
+<br>
+
+<a href="/home">Back to Home</a>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Books</title>
+</head>
+<body>
+
+<h1>Search Books</h1>
+
+<form method="POST">
+
+    <label>Enter Book ID or Book Name:</label>
+    <input type="text" name="search_text" required>
+
+    <button type="submit">Search</button>
+
+</form>
+
+<br>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Status</th>
+    </tr>
+
+    {% for book in books %}
+
+    <tr>
+        <td>{{ book[0] }}</td>
+        <td>{{ book[1] }}</td>
+        <td>{{ book[2] }}</td>
+        <td>{{ book[3] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/home">Back to Home</a>
+
+</body>
+</html>

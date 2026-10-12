@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issued Books</title>
+</head>
+<body>
+
+<h1>Issued Books</h1>
+
+{% if issued_books %}
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Book ID</th>
+        <th>Student Name</th>
+        <th>Reg No</th>
+        <th>Branch</th>
+        <th>Year</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+    </tr>
+
+    {% for book in issued_books %}
+
+    <tr>
+        <td>{{ book[0] }}</td>
+        <td>{{ book[1] }}</td>
+        <td>{{ book[2] }}</td>
+        <td>{{ book[3] }}</td>
+        <td>{{ book[4] }}</td>
+        <td>{{ book[5] }}</td>
+        <td>{{ book[6] }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<p>No books are currently issued.</p>
+
+{% endif %}
+
+<br>
+
+<a href="/home">Back to Home</a>
+
+</body>
+</html>

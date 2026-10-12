@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+</head>
+<body>
+
+<h1>Student Details</h1>
+<p>Details of students who currently have books issued from the library are shown below.</p>
+
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Student Name</th>
+        <th>Reg No</th>
+        <th>Branch</th>
+        <th>Year</th>
+        <th>Book ID</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        <td>{{ student[3] }}</td>
+        <td>{{ student[4] }}</td>
+        <td>{{ student[5] }}</td>
+        <td>{{ student[6] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/home">Back to Home</a>
+
+</body>
+</html>
